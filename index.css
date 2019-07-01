@@ -1,0 +1,88 @@
+
+<!--
+
+  input[type=range] {
+    width:360px;
+  }
+
+.index {
+	border-radius: 5px;
+	padding: 0.2em .5em;
+	background: #b1b1c0;
+	letter-spacing: .1em;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.2) inset;
+	margin: 0em .3em 0em 0em;
+}
+.button_color {
+	color: #dfd7cc;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	line-height: 200%;
+	margin: 0px 5px 5px 5px;
+	font-weight: 600;
+	font-size: 15px;
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+	width: 80px;
+}
+
+.button_move {
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	line-height: 200%;
+	margin: 0px 5px 5px 5px;
+	font-weight: 600;
+	font-size: 15px;
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+	width: 80px;
+}
+
+.button_action {
+	padding: .4em 1.0em;
+	border-radius: 20px;
+	text-align: center;
+	color: #ffffff;
+	background: #666666;
+	cursor: pointer;
+	letter-spacing: .1em;
+	line-height: 110%;
+	margin: 5px;
+	font-weight: 900;
+	font-size: 25px;
+	box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+	font-family:fantasy;
+	border-radius: 0.7em;
+	font-size: 2.5em;
+	padding: 0.3em .5em;
+	color:  #666699;
+	background: #dddddd;
+	letter-spacing: 0.2em;
+	line-height: 230%;
+	font-weight: 700;
+	box-shadow: 0px 0px 0.2em .05em rgba(0, 0, 0, 0.5);
+}
+
+.input {
+	padding: .2em .4em;
+	line-height: 150%;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.header {
+	border-radius: 0.7em;
+	padding: 0em .5em;
+	background: #c0c0c0;
+	letter-spacing: .1em;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.notes{
+		letter-spacing: .1em;
+	line-height: 150%;
+	font-size: 0.65em;
+}
+-->

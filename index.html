@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>文GIF（文章動画ジェネレーター）</title>
+<meta charset="utf-8" />
+<script src="LZWEncoder.js"></script>
+<script src="NeuQuant.js"></script>
+<script src="GIFEncoder.js"></script>
+<script src="bungif.js"></script>
+<script src="bungifCircles.js"></script>
+
+<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body onload="init()" bgcolor="#dfd7cc">
+
+	<table>
+		<tbody>
+			<tr>
+				<td align="center"><br>
+					<span class="title">文GIF</span></td>
+			</tr>
+			<tr>
+				<td width="480"><p></p>
+					<p></p>
+					<p>
+						文章を一文字ずつ表示させる動画（アニメーションGIF）に変換するサイトです。
+					</p></td>
+			</tr>
+			<tr>
+				<td><p></p></td>
+			</tr>
+			<tr>
+				<td align="center"><span class="header">▼プレビュー</span></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<canvas id="field" width="360" height="180"></canvas>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#efe7dc"><span class="index">背景色</span><input
+					type="range" value="0" min="0" max="360"
+					oninput="onRangeChange(this.value)"><br> <span
+					class="index">動作選択</span><input type="button" value="RANDOM"
+					onclick="onCircleRandom()" class="button_move"> <input
+					type="button" value="DOT" onclick="onCircleDot()"
+					class="button_move"> <input type="button" value="FALL"
+					onclick="onCircleFall()" class="button_move"><input
+					type="button" value="BUBBLE" onclick="onCircleBubble()"
+					class="button_move"><br>
+					<table>
+						<tbody>
+							<tr>
+								<td><p></p></td>
+							</tr>
+							<tr>
+								<td align="center"><span class="header">▼入力</span></td>
+								<td align="center"><span class="header">▼トーン</span></td>
+							</tr>
+							<tr>
+								<td rowspan="4"><form name="form1">
+										<textarea name="title" cols="55" rows=1 class="input">『作品名』作者名等（50字まで）</textarea>
+										<br>
+										<textarea name="maintext" cols="55" rows=6
+											onkeyup="onEditingText()" class="input">ここに500字までの本文を入力してください。
+改行毎に一文として認識されます。
+文数に制限はありません。
+動画の背景色、背景の円の動作、トーン（文ごとの文字速度）を設定することができます。
+</textarea>
+									</form></td>
+								<td align="center">第<span id="sentenceNumber">1</span>文：<select disabled id="selectedTone" onChange="onToneValueChanged()">
+										<option value="3">↑↑↑</option>
+										<option value="2">↑↑</option>
+										<option value="1">↑</option>
+										<option value="0" selected>→</option>
+										<option value="-1">↓</option>
+										<option value="-2">↓↓</option>
+										<option value="-3">↓↓↓</option>
+								</select></td>
+							</tr>
+							<tr>
+								<td align="center"><select id="toneList" size="5" onChange="onToneListChanged()">
+								</select></td>
+							</tr>
+							<tr>
+							</tr>
+							<tr>
+							</tr>
+						</tbody>
+					</table></td>
+			</tr>
+
+			<tr>
+				<td align="center"><input type="button" class="button_action"
+					value="動作確認" onclick="onBtnStartClick()"> <input
+					type="button" class="button_action" value="動画保存"
+					onclick="onBtnSaveClick()"></td>
+			</tr>
+			<tr>
+				<td align="center"><p></p> <span class="header">▼注意事項（2019.7.1）</span></td>
+			</tr>
+			<tr>
+				<td width="480"><span class="notes">
+						<ul>
+							--- version 1.0 (2019.7.1) ---
+							<li>文GIFの使用、もしくは生成された画像によって生じたいかなる不利益も、作成者は責任を負いません。</li>
+							<li>文GIF使用者の責任において、生成されたＧＩＦ画像を配布することは自由です。</li>
+							<li>文GIFの作成にあたっては、以下のサイトを参考にしました。
+								<ul>
+									<li><a href="https://github.com/antimatter15/jsgif">jsgif</a>を使用し、
+										<a
+										href="https://blog.narumium.net/2016/09/13/javascript%E3%81%A7gif%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%92%E4%BD%9C%E3%82%8B%E3%80%90jsgif%E3%80%91/">javascriptでGIFアニメを作る【jsgif】</a>に基づく修正を加えました。
+									</li>
+									<li>禁則処理は、<a
+										href="http://andyou.sakura.ne.jp/tool/fix_string.html">文章の整形および禁則処理スクリプト</a>を参考にしました。
+									</li>
+								</ul>
+							<li>文GIFは小竹田夏が作成しました。</li>
+						</ul>
+				</span></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</body>
+</html>
