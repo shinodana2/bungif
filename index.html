@@ -18,15 +18,12 @@
 	<table>
 		<tbody>
 			<tr>
-				<td align="center"><br>
-					<span class="title">文GIF</span></td>
+				<td align="center"><br> <span class="title">文GIF</span></td>
 			</tr>
 			<tr>
 				<td width="480"><p></p>
 					<p></p>
-					<p>
-						文章を一文字ずつ表示させる動画（アニメーションGIF）に変換するサイトです。
-					</p></td>
+					<p>文章を一文字ずつ表示させる動画（アニメーションGIF）に変換するサイトです。</p></td>
 			</tr>
 			<tr>
 				<td><p></p></td>
@@ -36,14 +33,18 @@
 			</tr>
 			<tr>
 				<td align="center">
-					<canvas id="field" width="360" height="180"></canvas>
+					<canvas id="field" width="720" height="360"></canvas>
 				</td>
 			</tr>
 			<tr>
-				<td align="center" bgcolor="#efe7dc"><span class="index">背景色</span><input
-					type="range" value="0" min="0" max="360"
-					oninput="onRangeChange(this.value)"><br> <span
-					class="index">動作選択</span><input type="button" value="RANDOM"
+				<td align="center" bgcolor="#efe7dc"><span class="index">背景色-赤</span><input
+					id="value_red" type="range" value="178" min="0" max="255"
+					oninput="onRangeChange()"><br>
+				<span class="index">背景色-緑</span><input id="value_green" type="range"
+					value="17" min="0" max="255" oninput="onRangeChange()"><br>
+				<span class="index">背景色-青</span><input id="value_blue" type="range"
+					value="17" min="0" max="255" oninput="onRangeChange()"><br>
+					<span class="index">動作選択</span><input type="button" value="RANDOM"
 					onclick="onCircleRandom()" class="button_move"> <input
 					type="button" value="DOT" onclick="onCircleDot()"
 					class="button_move"> <input type="button" value="FALL"
@@ -70,7 +71,8 @@
 動画の背景色、背景の円の動作、トーン（文ごとの文字速度）を設定することができます。
 </textarea>
 									</form></td>
-								<td align="center">第<span id="sentenceNumber">1</span>文：<select disabled id="selectedTone" onChange="onToneValueChanged()">
+								<td align="center">第<span id="sentenceNumber">1</span>文：<select
+									disabled id="selectedTone" onChange="onToneValueChanged()">
 										<option value="3">↑↑↑</option>
 										<option value="2">↑↑</option>
 										<option value="1">↑</option>
@@ -81,7 +83,8 @@
 								</select></td>
 							</tr>
 							<tr>
-								<td align="center"><select id="toneList" size="5" onChange="onToneListChanged()">
+								<td align="center"><select id="toneList" size="5"
+									onChange="onToneListChanged()">
 								</select></td>
 							</tr>
 							<tr>
