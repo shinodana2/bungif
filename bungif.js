@@ -416,6 +416,7 @@ function clearTimer() {
 }
 
 function finishAnimation() {
+	timeMain = 0;
 	clearTimer();
 	if (!isSaveMode) {
 		return;
@@ -578,38 +579,6 @@ function createCircle() {
 	return c;
 }
 
-function rgb2hsv(rgb) {
-	var r = rgb[0] / 255;
-	var g = rgb[1] / 255;
-	var b = rgb[2] / 255;
-
-	var max = Math.max(r, g, b);
-	var min = Math.min(r, g, b);
-	var diff = max - min;
-
-	var h = 0;
-
-	switch (min) {
-	case max:
-		h = 0;
-		break;
-	case r:
-		h = (60 * ((b - g) / diff)) + 180;
-		break;
-	case g:
-		h = (60 * ((r - b) / diff)) + 300;
-		break;
-	case b:
-		h = (60 * ((g - r) / diff)) + 60;
-		break;
-	}
-
-	var s = max == 0 ? 0 : diff / max;
-	var v = max;
-
-	return [ h, s, v ];
-}
-
 function onRangeChange() {
 	var r = document.getElementById('value_red').value;
 	var g = document.getElementById('value_green').value;
@@ -617,7 +586,9 @@ function onRangeChange() {
 	
 	colorBgBase = "rgb(" + r + "," + g + "," + b + ")";
 
-	drawStaticPart();
+	if (0==timeMain){
+		drawStaticPart();
+	}
 }
 
 function onToneValueChanged() {
